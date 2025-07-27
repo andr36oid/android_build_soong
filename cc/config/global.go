@@ -45,7 +45,11 @@ var (
 
 		"-O2",
 		"-g",
-
+             
+                "-fomit-frame-pointer",
+                "-frename-registers",
+                "-funswitch-loops",		
+		
 		"-fno-strict-aliasing",
 
 		"-Werror=date-time",
@@ -80,6 +84,7 @@ var (
 	}
 
 	deviceGlobalLdflags = []string{
+		"-Wl,--sort-common",
 		"-Wl,-z,noexecstack",
 		"-Wl,-z,relro",
 		"-Wl,-z,now",
